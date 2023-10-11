@@ -28,17 +28,14 @@ export default function TagTemplate({ pageContext, data }) {
         <meta name="description" />
       </Helmet>
       <div className="tagpage__container">
-        <div className="tagpage__title bg-pink p-8 text-center border-b border-black">
-          <h1
-            className="text-5xl font-extrabold "
-            style={{ textTransform: "capitalize" }}
-          >
-            {tag}
-          </h1>
+        <div className="tagpage__title bg-pink p-6 text-center border-b border-black">
+          <h1 className="text-5xl font-extrabold capitalize">{tag}</h1>
+
           <span className="tagpage__subheading text-sm">
             {tagHeader} &darr;
           </span>
         </div>
+
         <div className="mt-10 p-10 gap-5 mt-20 grid md:grid-cols-2 lg:grid-cols-4 2xl:gap-20">
           {Posts}
         </div>
@@ -51,12 +48,7 @@ export default function TagTemplate({ pageContext, data }) {
             {tags.map(({ tag: tagName }) => (
               <Link
                 to={`/tags/${tagName}`}
-                className=" text-xs rounded-full border border-black px-4 py-2 inline-block bg-yellow text-xs  mb-2 mr-2"
-                style={{
-                  marginRight: "8px",
-                  marginBottom: "8px",
-                  textTransform: "capitalize",
-                }}
+                className="mb-2 mr-2 capitalize text-xs rounded-full border border-black px-4 py-2 inline-block bg-yellow text-xs "
               >
                 {tagName}
               </Link>
